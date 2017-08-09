@@ -6,8 +6,8 @@ from .models import Post
 
 def home(request):
     posts = Post.objects.all()
-    return render(request, 'index.html', {'all_post':posts})
+    return render(request, 'blog/index.html', {'all_post':posts})
 
 def single_post(request, post_id):
     post = Post.objects.get(pk=post_id)
-    return render(request, 'single.html', {'single_post':post})
+    return render(request, 'blog/single.html', {'single_post':post})
